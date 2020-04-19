@@ -136,6 +136,12 @@ print("\n-------------------------------------------\n")
             }).disposed(by: disposeBag)
         
         print("\n-------------------------------------------\n")
+        // Filter the events of an observable
+        Observable.of(1,2,3,4,5,6,7,8,9).filter{
+            $0%2 == 0
+        }.subscribe(onNext: { item in
+            print(item)
+            }).disposed(by: disposeBag)
         
     }
 
